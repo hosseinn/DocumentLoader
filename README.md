@@ -57,8 +57,8 @@ And for a local build:
 
 If you have installed LibreOffice 7.1 SDK, all the example with be place at:
 
-    /opt/libreoffice7.0/sdk/examples/
+    /opt/libreoffice7.1/sdk/examples/
     
 The original `DocumentLoader` example can be found at:
 
-    /opt/libreoffice7.0/sdk/examples/cpp/DocumentLoader/
+    /opt/libreoffice7.1/sdk/examples/cpp/DocumentLoader/
