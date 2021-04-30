@@ -54,27 +54,24 @@
 
 #include <string.h>
 
-using namespace com::sun::star::uno;
-using namespace com::sun::star::lang;
-using namespace com::sun::star::beans;
-using namespace com::sun::star::bridge;
-using namespace com::sun::star::frame;
-using namespace com::sun::star::registry;
-
-using ::rtl::OUString;
-using ::rtl::OUStringToOString;
-using ::rtl::Bootstrap;
+using namespace css::uno;
+using namespace css::lang;
+using namespace css::beans;
+using namespace css::bridge;
+using namespace css::frame;
+using namespace css::registry;
+using namespace rtl;
 
 int main()
 {
-    OUString xLOPath(LO_ROOT);
-    OUString sArgDocUrl(xLOPath + "/sdk/examples/cpp/DocumentLoader/test.odt");
+    OUString sLOPath(LO_ROOT);
+    OUString sArgDocUrl(sLOPath + "/sdk/examples/cpp/DocumentLoader/test.odt");
 
     OUString sConnectionString("uno:socket,host=localhost,port=2083;urp;StarOffice.ServiceManager");
 
-    OUString xRDB = OUString("file://")+ xLOPath + OUString("/program/types/offapi.rdb");
+    OUString sRDB = OUString("file://")+ sLOPath + OUString("/program/types/offapi.rdb");
     rtl::Bootstrap::set(OUString::createFromAscii("URE_MORE_TYPES"),
-    rtl::Bootstrap::encode(xRDB));
+    rtl::Bootstrap::encode(sRDB));
 
     OUString sAbsoluteDocUrl, sWorkingDir, sDocPathUrl;
     osl_getProcessWorkingDir(&sWorkingDir.pData);
@@ -100,7 +97,7 @@ int main()
 
     Reference< XUnoUrlResolver > resolver( xInterface, UNO_QUERY );
 
-    // Resolves the component context from the office, on the uno URL given by argv[1].
+    // Resolves the component context from the office, on the uno URL
     try
     {
         xInterface = Reference< XInterface >(
@@ -130,7 +127,6 @@ int main()
     /* Loads a component specified by a URL into the specified new or existing
        frame.
     */
-
 
     Reference< XComponent > xComponent = xComponentLoader->loadComponentFromURL(
         sAbsoluteDocUrl, OUString( "_blank" ), 0,
