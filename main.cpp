@@ -65,7 +65,7 @@ using namespace rtl;
 int main()
 {
     OUString sLOPath(LO_ROOT);
-    OUString sArgDocUrl(sLOPath + "/sdk/examples/cpp/DocumentLoader/test.odt");
+    OUString sArgDocUrl("../DocumentLoader/test.odt");
 
     OUString sConnectionString("uno:socket,host=localhost,port=2083;urp;StarOffice.ServiceManager");
 

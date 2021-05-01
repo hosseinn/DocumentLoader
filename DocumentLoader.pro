@@ -43,8 +43,8 @@ OTHER_FILES += \
         README.md
 
 DISTFILES += \
-    README.md
-
+    README.md \
+    test.odt
 
 !build_pass:prebuild.commands = $${LOROOT}/sdk/bin/cppumaker -Gc -O. $${LOROOT}/program/types.rdb $${LOROOT}/program/types/offapi.rdb
 !build_pass:FORCE.depends += prebuild
