@@ -1,7 +1,7 @@
 # Document Loader
 
 This is the `DocumentLoader` example from LibreOffice SDK, converted to use
-`qmake`, in order too compile, execute and debug easier using Qt Creator.
+`qmake`, in order to compile, execute and debug easier using Qt Creator.
 
 ## Compiling and Running
 
