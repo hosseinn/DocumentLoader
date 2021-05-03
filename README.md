@@ -5,6 +5,8 @@ This is the `DocumentLoader` example from LibreOffice SDK, converted to use
 
 ## Compiling and Running
 
+### Using the Official SDK
+
 To be able to compile and run this example, you should have installed
 LibreOffice and LibreOffice SDK, then you should set `LOROOT` in
 `DocumentLoader.pro` to appropriate folder. For LibreOffice 7.1 SDK, you should
@@ -19,6 +21,16 @@ symbolic link `/libmergedlo.so` using this command:
 
     $ sudo ln -s /opt/libreoffice7.1/program/libmergedlo.so /libmergedlo.so
 
+Compiling and running the `DocumentLoader` is easy. First, run an instance of
+LibreOffice to listen for the incoming connections:
+
+    $ libreoffice7.1 "--accept=socket,port=2083;urp;"
+    
+and then just open the project file in Qt Creator, and click `Run` or press
+`Ctrl+R`.
+
+### Local Build
+
 If you have [built LibreOffice](
 https://wiki.documentfoundation.org/Development/BuildingOnLinux) yourself, use
 the `instdir` path for `LOROOT`:
@@ -26,14 +38,6 @@ the `instdir` path for `LOROOT`:
     LOROOT = /home/hossein/Projects/libreoffice/core/instdir
 
 In such case, the above symbolic link is not needed, and should not be created.
-
-Compiling and running the `DocumentLoader` example is easy. First, run an
-instance of LibreOffice to listen for the incoming connections:
-
-    $ libreoffice7.1 "--accept=socket,port=2083;urp;"
-    
-and then just open the project file in Qt Creator, and click `Run` or press
-`Ctrl+R`.
 
 If you use a local build, run:
 
